@@ -1,0 +1,260 @@
+// :root {
+//     --scheme-v1: #ffffff;
+// }
+
+// @font-face {
+//   font-family: "font-name";
+//   src: local("../fonts/font-name"),
+//     url("../fonts/font-name.ext") format("truetype");
+//   font-weight: 700;
+// }
+
+body {
+  background: linear-gradient(
+      180deg,
+      rgba(154, 250, 157, 1) 20%,
+      rgba(255, 255, 255, 1) 80%
+    )
+    no-repeat;
+
+  font: 400 15px / 1.64 Arial, Helvetica, sans-serif;
+}
+
+section {
+  margin: 0 auto;
+  max-width: 950px;
+
+  ul {
+    li {
+      list-style: disc;
+      margin: 10px 0 10px 20px;
+      padding: 0 0 0 5px;
+    }
+  }
+
+  figure {
+    float: left;
+
+    img {
+      max-width: 300px;
+    }
+  }
+
+  h1 {
+    color: #3b98b0;
+    font-size: 22px;
+    margin: 20px 0 0;
+  }
+
+  p {
+    span {
+      display: block;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 0 10px 0;
+    }
+  }
+}
+
+main {
+  margin: 20px auto 0;
+  max-width: 950px;
+}
+
+blockquote {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+
+  p {
+    max-width: 600px;
+  }
+}
+
+.button {
+  background: #37a634;
+  color: #ffffff;
+  display: block;
+  margin: 40px 0 0;
+  padding: 8px 30px;
+  transition: background 0.1s ease-in-out;
+  width: fit-content;
+
+  &:hover {
+    background: #006401;
+  }
+}
+
+.popups {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+
+  &.mini {
+    grid-template-columns: repeat(4, 1fr);
+
+    figure {
+      img {
+        max-height: 400px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  figure {
+    img {
+      cursor: pointer;
+
+      max-height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+
+  figure {
+    text-align: center;
+
+    a {
+      transition: opacity 0.3s ease-in-out;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    figcaption {
+      font-size: 24px;
+      margin: 10px 0;
+    }
+  }
+}
+
+.wide {
+  img {
+    max-width: none;
+  }
+}
+
+.buttons {
+  margin: 40px 0 0;
+
+  .button {
+    display: inline-block;
+    margin: 0 20px 20px 0;
+  }
+}
+
+@media only screen and (max-width: 982px) {
+  main {
+    margin: auto;
+
+    section {
+      padding: 0 20px;
+
+      blockquote {
+        flex-wrap: wrap;
+      }
+
+      .popups {
+        figure {
+          img {
+            max-height: 160px;
+          }
+        }
+
+        &.mini {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 482px) {
+  main {
+    section {
+      blockquote {
+        text-align: center;
+        figure {
+          margin: auto;
+        }
+      }
+
+      .popups {
+        grid-template-columns: repeat(1, 1fr);
+        figure {
+          img {
+            margin: auto;
+            max-height: 160px;
+          }
+        }
+
+        &.mini {
+          grid-template-columns: repeat(1, 1fr);
+
+          figure {
+            img {
+              margin: auto;
+            }
+          }
+        }
+      }
+
+      .grid {
+        grid-template-columns: repeat(1, 1fr);
+
+        figure {
+          img {
+            margin: auto;
+          }
+        }
+      }
+
+      .button {
+        margin: 40px auto 0;
+      }
+
+      .buttons {
+        text-align: center;
+
+        .button {
+          margin: 0 20px 20px 20px;
+        }
+      }
+    }
+
+    .modal {
+      img {
+        padding: 30px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 364px) {
+  main {
+    section {
+      padding: 0 15px;
+
+      h1 {
+        font-size: 18px;
+      }
+      p {
+        span {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
